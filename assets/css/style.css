@@ -1561,3 +1561,11 @@ section {
   color: #fff;
   text-decoration: none;
 }
+.carousel .carousel-indicators li {
+  background-color: #fff;
+  background-color: rgba(70, 70, 70, 0.25) !important;
+}
+
+.carousel .carousel-indicators .active {
+  background-color: #444 !important;
+}

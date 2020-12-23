@@ -42,30 +42,31 @@
 	              Calzada Del Tecnológico S/N, <br>
 	              Fraccionamiento Tomas Aquino<br>
 	              Tijuana, Baja California. C.P. 22414 <br><br>
-	              <strong>Telefono:</strong> +52 664 123 4567<br>
-	              <strong>Correo:</strong> info@ejemplo.com<br>
+	              <strong>Telefono:</strong> +52 664 607 84 00<br>
+	              <strong>Correo:</strong> webmaster@tijuana.tecnm.mx<br>
+	              <strong>Pagina web:</strong> https://www.tijuana.tecnm.mx/<br>
 	            </p>
 	          </div>
 
 	          <div class="col-lg-2 col-md-6 footer-links">
 	            <h4>Enlaces Utiles</h4>
 	            <ul>
-	              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-	              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-	              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-	              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-	              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+	              <li><i class="bx bx-chevron-right"></i> <a href="index.php">Inicio</a></li>
+	              <li><i class="bx bx-chevron-right"></i> <a href="about.php">Acerca de Nosotros</a></li>
+	              <li><i class="bx bx-chevron-right"></i> <a href="cursos.php">Eventos</a></li>
+	              <li><i class="bx bx-chevron-right"></i> <a href="#">Terminos y Codiciones</a></li>
+	              <li><i class="bx bx-chevron-right"></i> <a href="#">Poliza de Privacidad</a></li>
 	            </ul>
 	          </div>
 
 	          <div class="col-lg-3 col-md-6 footer-links">
-	            <h4>Our Services</h4>
+	            <h4>Nuestros Eventos</h4>
 	            <ul>
-	              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-	              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-	              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-	              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-	              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+	              <li><i class="bx bx-chevron-right"></i> <a href="detalles-salto.php">Salto de Caballo</a></li>
+	              <li><i class="bx bx-chevron-right"></i> <a href="detalles-barras.php">Barras Asimetricas</a></li>
+	              <li><i class="bx bx-chevron-right"></i> <a href="#">Viga de Equilibrio</a></li>
+	              <li><i class="bx bx-chevron-right"></i> <a href="detalles-manos.php">Manos Libres</a></li>
+	              <li><i class="bx bx-chevron-right"></i> <a href="auxilios.php">Primeros Auxilios</a></li>
 	            </ul>
 	          </div>
 

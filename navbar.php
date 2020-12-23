@@ -45,24 +45,24 @@
           <li><a href="auxilios.php">Auxilios</a></li>
           <li><a href="#">Events</a></li>
           <li><a href="#">Pricing</a></li>
-          <li class="drop-down"><a href="#">Drop Down</a>
+          <li class="drop-down"><a href="unidades.php">Unidades</a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Deep Drop Down</a>
+              <li><a href="unidad1.php">Unidad 1</a></li>
+              <li class="drop-down"><a href="unidad2.php">Unidad 2</a>
                 <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
+                  <li><a href="ejbases.php">Ejercicios Bases</a></li>
+                  <li><a href="manoslibres.php">Manos Libre o Suelo</a></li>
+                  <li><a href="barrasasimetricas.php">Barras Asimetricas</a></li>
+                  <li><a href="saltocaballo.php">Salto de Caballo / Potro</a></li>
+                  <li><a href="evalua2.php">Evaluacion</a></li>
                 </ul>
               </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="unidad3.php">Unidad 3</a></li>
               <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Drop Down 5</a></li>
             </ul>
           </li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="contacto.php">Contacto</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->

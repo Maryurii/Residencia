@@ -3,10 +3,9 @@
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$apaterno = $amaterno = $fecha_nac = $peso_kg = $estatura_cm = $ciudad = $asociacion = $clave = $rep_clave = "";
-$nombre_err = $apaterno_err = $amaterno_err = $fecha_nac_err = $peso_kg_err = $estatura_cm_err = $clave_err = $rep_clave_err = "";
+$username = $nombre = $apaterno = $amaterno = $fecha_nac = $peso_kg = $estatura_cm = $ciudad = $asociacion = $clave = $rep_clave = "";
+$username_err = $nombre_err = $apaterno_err = $amaterno_err = $fecha_nac_err = $peso_kg_err = $estatura_cm_err = $clave_err = $rep_clave_err = "";
 
-$nombre = $_POST['nombre'];
 
 $query=mysqli_query($link,"SELECT Id_Ciudad, Ciudad, Id_Pais FROM ciudad");
     
@@ -24,11 +23,41 @@ $query2=mysqli_query($link,"SELECT Id_Asociacion, Asociacion, Tipo FROM asociaci
         echo $asociacion;
     }
  
+ if(empty(trim(isset($_POST["username"])))){
+        $username_err = "Por favor ingrese un usuario.";
+    } else{
+        // Prepare a select statement
+        $sql = "SELECT ID_Usuario FROM USUARIO WHERE Username = ?";
+        
+        if($stmt = mysqli_prepare($link, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+            
+            // Set parameters
+            $param_username = trim($_POST["username"]);
+            
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                /* store result */
+                mysqli_stmt_store_result($stmt);
+                
+                if(mysqli_stmt_num_rows($stmt) == 1){
+                    $username_err = "Este usuario ya fue tomado.";
+                } else{
+                    $username = trim($_POST["username"]);
+                }
+            } else{
+                echo "Al parecer algo salió mal.";
+            }
+            // Close statement
+        mysqli_stmt_close($stmt);
+        } 
+    }
 // Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] === "POST"){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Validate nombre
-    if(empty(trim($nombre))){
+    if(empty(trim(isset($_POST["nombre"])))){
         $nombre_err = "Por favor ingrese un usuario.";
     } else{
         // Prepare a select statement
@@ -43,7 +72,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
-                /* store result */
+                // store result 
                 mysqli_stmt_store_result($stmt);
 
                 $nombre = trim($_POST["nombre"]);
@@ -52,13 +81,12 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 echo "Al parecer algo salió mal.";
             }
         }
-         
         // Close statement
         mysqli_stmt_close($stmt);
     }
 
     // Validate apaterno
-    if(empty(trim($_POST["apaterno"]))){
+    if(empty(trim(isset($_POST["apaterno"])))){
         $apaterno_err = "Por favor ingrese su apellido paterno.";
     } else{
         // Prepare a select statement
@@ -88,7 +116,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     }
 
     // Validate amaterno
-    if(empty($_POST["amaterno"])){
+    if(empty(trim(isset($_POST["amaterno"])))){
         $amaterno_err = "Por favor ingrese su apellido materno.";
     } else{
         // Prepare a select statement
@@ -118,7 +146,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     }
 
     // Validate birth date
-    if(empty($_POST["fecha_nac"])){
+    if(empty(trim(isset($_POST["fecha_nac"])))){
         $fecha_nac_err = "Por favor ingrese su fecha de nacimiento.";
     } else{
         // Prepare a select statement
@@ -148,7 +176,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     }
 
     // Validate weight
-    if(empty($_POST["peso"])){
+    if(empty(trim(isset($_POST["peso"])))){
         $peso_kg_err = "Por favor ingrese su peso en kilogramos.";
     } else{
         // Prepare a select statement
@@ -178,7 +206,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     }
 
     // Validate height
-    if(empty($_POST["estatura"])){
+    if(empty(trim(isset($_POST["estatura"])))){
         $estatura_cm_err = "Por favor ingrese su estatura en centimetros.";
     } else{
         // Prepare a select statement
@@ -208,7 +236,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     }
     
     // Validate password
-    if(empty(trim($_POST["clave"]))){
+    if(empty(trim(isset($_POST["clave"])))){
         $clave_err = "Por favor ingresa una contraseña.";     
     } elseif(strlen(trim($_POST["clave"])) < 6){
         $clave_err = "La contraseña al menos debe tener 6 caracteres.";
@@ -217,7 +245,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     }
     
     // Validate confirm password
-    if(empty(trim($_POST["rep_clave"]))){
+    if(empty(trim(isset($_POST["rep_clave"])))){
         $rep_clave_err = "Confirma tu contraseña.";     
     } else{
         $rep_clave = trim($_POST["rep_clave"]);
@@ -227,14 +255,14 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     }
     
     // Check input errors before inserting in database
-    if(empty($nombre_err) && empty($apaterno_err) && empty($amaterno_err) && empty($fecha_nac_err) && empty($peso_kg_err) && empty($estatura_cm_err) && empty($clave_err) && empty($rep_clave_err)){
+    if(empty($nombre_err) && empty($apaterno_err) && empty($amaterno_err) && empty($fecha_nac_err) && empty($peso_kg_err) && empty($estatura_cm_err) && empty($clave_err) && empty($rep_clave_err) && empty($username_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO USUARIO (Nombre, ApellidoP, ApellidoM, FechaNacimiento, Peso, Estatura, Estatus, Clv_Nivel, Id_Ciudad, Id_Asociacion) VALUES (?, ?, ?, ?, ?, ?, 1, 1, ?, ?)";
+        $sql = "INSERT INTO USUARIO (Nombre, ApellidoP, ApellidoM, FechaNacimiento, Peso, Estatura, Estatus, Clv_Nivel, Id_Ciudad, Id_Asociacion, Username) VALUES (?, ?, ?, ?, ?, ?, 1, 1, ?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ss", $param_nombre, $param_apaterno, $param_amaterno, $param_fechanac, $param_peso, $param_estatura);
+            mysqli_stmt_bind_param($stmt, "ss", $param_nombre, $param_apaterno, $param_amaterno, $param_fechanac, $param_peso, $param_estatura, $param_username);
             
             // Set parameters
             $param_nombre = $nombre;
@@ -243,6 +271,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             $param_fechanac = $fecha_nac;
             $param_peso = $peso_kg;
             $param_estatura = $estatura_cm;
+            $param_username = $username;
             $param_clave = password_hash($clave, PASSWORD_DEFAULT); // Creates a password hash
             
             // Attempt to execute the prepared statement
@@ -272,7 +301,15 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 <h1 >Registrarse</h1>
 
 	<div class="modal-body" style="float: left; width: 50%;">
-          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> registro.php" method="post">
+          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+
+          	<div class="input-group mb-2 form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="text" name="username" class="form-control input_user" value="<?php echo $username; ?>" placeholder="username">
+                <span class="help-block"><?php echo $username; ?></span>
+            </div>
 
             <div class="input-group mb-2 form-group <?php echo (!empty($nombre_err)) ? 'has-error' : ''; ?>">
                 <div class="input-group-append">

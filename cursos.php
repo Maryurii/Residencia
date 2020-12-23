@@ -38,7 +38,7 @@
                   <p class="price">--</p>
                 </div>
 
-                <h3><a href="detalles-salto.php">Salto de Caballo</a></h3>
+                <h3><a href="detalles-salto.php">Salto de Caballo/Potro</a></h3>
                 <p>Este evento se coloca en forma lateral para la ejecución del salto desde la tabla de impulso, vuelo de entrada, apoyo pasajero de una o dos manos, repulsión, vuelo de salida y llegada a la posición de firmes.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                                     
