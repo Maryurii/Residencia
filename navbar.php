@@ -43,8 +43,8 @@
           <li><a href="about.php">Acerca de</a></li>
           <li><a href="cursos.php">Cursos</a></li>
           <li><a href="auxilios.php">Auxilios</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Pestaña libre</a></li>
+          <li><a href="#">Pestaña libre 2</a></li>
           <li class="drop-down"><a href="unidades.php">Unidades</a>
             <ul>
               <li><a href="unidad1.php">Unidad 1</a></li>
@@ -58,8 +58,6 @@
                 </ul>
               </li>
               <li><a href="unidad3.php">Unidad 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
             </ul>
           </li>
           <li><a href="contacto.php">Contacto</a></li>
@@ -75,6 +73,8 @@
 
     </div>
   </header><!-- End Header -->
+  <br>
+
 
   
 

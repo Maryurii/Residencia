@@ -97,7 +97,7 @@
 
         <div class="section-title">
           <h2>Gimnastas Destacadas</h2>
-          <p>Entre las Gimnastas que mas se han destacado en este deporte, se encuentran:</p>
+          <p>Entre las Gimnastas que más se han destacado en este deporte, se encuentran:</p>
         </div>
 
         <div class="owl-carousel testimonials-carousel" data-aos="zoom-in" data-aos-delay="100">
@@ -109,7 +109,7 @@
               <h4>Nacida en Rumania</h4>
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Esta gimanasta es considerada la mejor en todos los tiempos. En competiciones oficiales, Nadia llego a obtener mas de 10 medallas de oro, 5 de plata y 2 de bronce. Ademas fue la primera en obtener la puntuacion perfecta.
+                Esta gimnasta es considerada la mejor en todos los tiempos. En competiciones oficiales, Nadia llego a obtener más de 10 medallas de oro, 5 de plata y 2 de bronce. Además, fue la primera en obtener la puntuación perfecta.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
@@ -122,7 +122,7 @@
               <h4>Nacida en Rusia</h4>
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Esta gimnasta alcanzo el oro en 2 ocasiones en lo Juego Olimpicos y fue campeona de Europa 6 veces consecutivas.
+                Esta gimnasta alcanzo el oro en 2 ocasiones en lo Juego Olímpicos y fue campeona de Europa 6 veces consecutivas.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
@@ -132,10 +132,10 @@
             <div class="testimonial-item">
               <img src="assets/img/testimonials/Simone.jpg" class="testimonial-img" alt="">
               <h3>Simone Biles</h3>
-              <h4>Nacida en Estados Unidos de America</h4>
+              <h4>Nacida en Estados Unidos de América</h4>
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Consiguio el oro en los Juegos Olimpicos de Rio 2016 y ha sido 6 veces campeona del mundo, siendo su especialidad los ejercicios de suelo. 
+                Consiguió el oro en los Juegos Olímpicos de Rio 2016 y ha sido 6 veces campeona del mundo, siendo su especialidad los ejercicios de suelo.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>

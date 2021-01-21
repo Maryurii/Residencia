@@ -63,3 +63,9 @@
   background: white;
 }
 
+/* Style for video */
+.interactive-video {
+  height: auto;
+  width: 100%;
+  transform: scaleX(-1);
+}
